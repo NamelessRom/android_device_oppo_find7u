@@ -230,7 +230,7 @@ USE_DSP_MANAGER += false
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8974
+    power.find7
 
 # QRNGD
 PRODUCT_PACKAGES += \
