@@ -174,8 +174,7 @@ PRODUCT_PACKAGES += \
 
 # Logo
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/logo.bin:system/logo.bin \
-    $(LOCAL_PATH)/7slogo.bin:system/7slogo.bin
+    $(LOCAL_PATH)/logo.bin:system/logo.bin
 
 # Media
 PRODUCT_PACKAGES += \
@@ -227,6 +226,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
 
+USE_DSP_MANAGER += false
+
 # Power
 PRODUCT_PACKAGES += \
     power.msm8974
@@ -267,15 +268,6 @@ PRODUCT_PACKAGES += \
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
-# TWRP
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
-    $(LOCAL_PATH)/ui.zip:system/ui.zip
 
 # USB
 PRODUCT_PACKAGES += \
@@ -325,10 +317,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
     ro.qualcomm.perf.cores_online=2
-
-# Include 1080 boot animation in the zip for find7a
-PRODUCT_COPY_FILES += \
-    vendor/Gummy/prebuilt/common/bootanimation/1080.zip:system/media/1080.zip
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
