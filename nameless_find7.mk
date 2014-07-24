@@ -9,6 +9,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/nameless/config/common.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/nameless/config/nfc_enhanced.mk)
+
 # Inline kernel
 TARGET_KERNEL_SOURCE := kernel/oppo/find7
 TARGET_KERNEL_CONFIG := custom_find7_defconfig
