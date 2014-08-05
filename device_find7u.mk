@@ -251,7 +251,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # Scripts
 PRODUCT_PACKAGES += \
@@ -266,10 +267,6 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.qcom.usb.sh \
     init.qcom.audio.sh
-
-# Thermal config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
 # USB
 PRODUCT_PACKAGES += \
