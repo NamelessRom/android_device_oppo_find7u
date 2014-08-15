@@ -97,9 +97,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     view.scroll_friction=1 \
     ro.min_pointer_dur=8 \
     ro.min_fling_velocity=8000 \
-    ro.max_fling_velocity=16000 \
-    audio.offload.min.duration.secs=0
-
+    ro.max_fling_velocity=16000
 
 # Camera
 PRODUCT_PACKAGES += \
