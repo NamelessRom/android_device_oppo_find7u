@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Gummy ROM Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from find7 device
-$(call inherit-product, device/oppo/find7u/device_find7u.mk)
+$(call inherit-product, device/oppo/find7u/find7u.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_find7u
