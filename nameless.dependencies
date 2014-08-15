@@ -12,6 +12,12 @@
     "revision": "android-4.4"
   },
   {
+    "remote": "nameless",
+    "repository": "android_device_oppo_msm8974-common",
+    "target_path": "device/oppo/msm8974-common",
+    "revision": "android-4.4"
+  },
+  {
     "remote": "cm",
     "repository": "android_hardware_qcom_display-caf-new",
     "target_path": "hardware/qcom/display-caf-new",
