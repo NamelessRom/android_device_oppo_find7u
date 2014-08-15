@@ -14,13 +14,8 @@
 # limitations under the License.
 #
 
-# inherit from Oppo common
--include device/oppo/common/BoardConfigCommon.mk
-
--include vendor/oppo/find7/BoardConfigVendor.mk
-
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := device/oppo/find7u/include
+# Inherit from MSM8974 common
+-include device/oppo/msm8974-common/BoardConfigCommon.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -63,12 +58,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/find7u/bluetooth
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DOPPO_CAMERA_HARDWARE
 
-# Charger
-BOARD_CHARGER_RES := device/oppo/find7u/charger
-
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/oppo/find7u/cmhw
-
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
@@ -82,36 +71,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# GPS
-TARGET_NO_RPC := true
-
-# Graphics
-TARGET_QCOM_DISPLAY_VARIANT := caf-new
-BOARD_EGL_CFG := device/oppo/find7u/configs/egl.cfg
-USE_OPENGL_RENDERER := true
-TARGET_USES_C2D_COMPOSITION := true
-TARGET_USES_ION := true
-HAVE_ADRENO_SOURCE:= false
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
-
-# Enables Adreno RS driver
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_find7
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/oppo/find7
@@ -156,9 +117,6 @@ TARGET_USES_WCNSS_CTRL           := true
 TARGET_USES_QCOM_WCNSS_QMI       := true
 TARGET_USES_WCNSS_MAC_ADDR_REV   := true
 
-# Enable CNE
-#BOARD_USES_QCNE := true
-
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
@@ -167,24 +125,3 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Enable CPU boosting events in the power HAL
 TARGET_USES_CPU_BOOST_HINT := true
-
-# Board specific SELinux policy variable definitions
-BOARD_SEPOLICY_DIRS := \
-   device/oppo/find7u/sepolicy
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-    file.te \
-    device.te \
-    app.te \
-    cne.te \
-    qmux.te \
-    mpdecision.te \
-    thermald.te \
-    ueventd.te \
-    vold.te \
-    file_contexts \
-    genfs_contexts \
-    te_macros
-
-PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
