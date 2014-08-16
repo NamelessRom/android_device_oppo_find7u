@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2014 The Gummy ROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,9 @@
 
 # Inherit from MSM8974 common
 -include device/oppo/msm8974-common/BoardConfigCommon.mk
+
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := device/oppo/find7u/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -58,6 +60,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/find7u/bluetooth
 USE_DEVICE_SPECIFIC_CAMERA := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DOPPO_CAMERA_HARDWARE
 
+# Charger
+BOARD_CHARGER_RES := device/oppo/find7u/charger
+
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
@@ -70,6 +75,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
+
+# GPS
+TARGET_NO_RPC := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_find7
@@ -125,3 +133,5 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Enable CPU boosting events in the power HAL
 TARGET_USES_CPU_BOOST_HINT := true
+
+PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
