@@ -25,14 +25,23 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on init
+    write /sys/class/android_usb/android0/f_rndis/wceis 1
+
 on boot
-    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/f_rndis/manufacturer ${ro.product.manufacturer}
     write /sys/class/android_usb/android0/f_rndis/vendorID 22D9
-    write /sys/class/android_usb/android0/f_rndis/wceis 1
 
+service qcom-usb-sh /system/bin/sh /init.qcom.usb.sh
+    class core
+    user root
+    oneshot
+
+#added by songxh for usb config begain
+
+# USB compositions
 on property:sys.usb.config=mtp
     stop adbd
     write /sys/class/android_usb/android0/enable 0
@@ -180,6 +189,7 @@ on property:sys.usb.config=mtp,mass_storage,adb
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#add a config for support rndis, diag and adb, added by zhangzhilong 2014-03-10
 on property:sys.usb.config=rndis,diag,adb
     stop adbd
     write /sys/class/android_usb/android0/enable 0
@@ -192,6 +202,7 @@ on property:sys.usb.config=rndis,diag,adb
     start adbd
     setprop sys.usb.state ${sys.usb.config}
 
+#add a config for default case by qiujf 2013-6-20
 on property:sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/iSerial 0123456789ABCDEF

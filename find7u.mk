@@ -53,7 +53,30 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    ueventd.qcom.rc \
     libinit_find7
+
+# Scripts
+PRODUCT_PACKAGES += \
+    init.qcom.post_boot.sh \
+    init.qcom.bt.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.fm.sh \
+    init.qcom.sdio.sh \
+    init.crda.sh \
+    init.qcom.sh \
+    init.qcom.class_core.sh \
+    init.class_main.sh \
+    init.qcom.usb.sh \
+    init.qcom.audio.sh
+
+# Charger
+PRODUCT_PACKAGES += \
+    charge_only_mode \
+    charger \
+    charger_res_images
 
 # Audio
 PRODUCT_COPY_FILES += \
