@@ -79,16 +79,6 @@ on post-fs-data
     chown system camera /sys/devices/qcom,camera-led-flash.81/test
     chmod 0660 /sys/devices/qcom,camera-led-flash.81/test
 
-service qbcharger /charger -m 1
-    disabled
-    oneshot
-
-on property:sys.qbcharger.enable=true
-    start qbcharger
-
-on property:sys.qbcharger.enable=false
-    stop qbcharger
-
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
 
