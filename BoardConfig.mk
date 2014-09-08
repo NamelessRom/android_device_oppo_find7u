@@ -46,5 +46,8 @@ TARGET_RECOVERY_FSTAB := device/oppo/find7u/rootdir/etc/fstab.qcom
 # Assert
 TARGET_OTA_ASSERT_DEVICE := find7,find7a,find7u,X9007,X9006,FIND7
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/oppo/find7u
+
 # inherit from the proprietary version
 -include vendor/oppo/find7/BoardConfigVendor.mk
