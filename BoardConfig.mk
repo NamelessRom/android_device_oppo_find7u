@@ -50,5 +50,7 @@ TARGET_OTA_ASSERT_DEVICE := find7,find7a,find7u,X9007,X9006,FIND7
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/oppo/find7u
 
+AUDIO_FEATURE_ENABLED_ULTRA_LOW_LATENCY := true
+
 # inherit from the proprietary version
 -include vendor/oppo/find7/BoardConfigVendor.mk
