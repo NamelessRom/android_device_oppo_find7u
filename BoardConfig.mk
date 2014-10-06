@@ -20,6 +20,7 @@
 # Kernel
 TARGET_KERNEL_CONFIG := custom_find7_defconfig
 BOARD_CUSTOM_BOOTIMG_MK := device/oppo/find7u/mkbootimg.mk
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/find7u/bluetooth
