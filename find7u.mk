@@ -20,6 +20,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # do not build dsp manager
 USE_DSP_MANAGER := false
 
+# Bootanimation and recovery
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
