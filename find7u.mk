@@ -17,6 +17,10 @@
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Bootanimation and recovery
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom
