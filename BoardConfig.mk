@@ -31,6 +31,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 28219568128
 # Workaround for factory issue
 BOARD_VOLD_CRYPTFS_MIGRATE := true
 
+STOCK_LAYOUT := false
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/oppo/find7u/rootdir/etc/fstab.qcom
 RECOVERY_VARIANT      := philz
