@@ -32,7 +32,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 28219568128
 BOARD_VOLD_CRYPTFS_MIGRATE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/oppo/find7u/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/oppo/find7-common/rootdir/etc/unified/fstab.qcom
 RECOVERY_VARIANT      := philz
 
 # Assert
